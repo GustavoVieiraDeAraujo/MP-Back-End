@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.7.4
+  SuggestExtensions: false
+  NewCops: enable
+  Exclude:
+    - db/schema.rb 
+    - bin/bundle
+    - config/environments/development.rb
+    - spec/rails_helper.rb 
+    - config/initializers/devise.rb
+    - config/routes.rb
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 26
+
+Metrics/AbcSize:
+  Max: 26
