@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: mp_back_end_production
-  username: mp_back_end
-  password: <%= ENV['MP_BACK_END_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  database: railwayapp_production
+  username: railapp
+  password: <%= ENV['RAILWAYAPP_DATABASE_PASSWORD'] %>
