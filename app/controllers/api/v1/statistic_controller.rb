@@ -1,4 +1,4 @@
-class Api::V1::StatisticsController < ApplicationController
+class Api::V1::StatisticController < ApplicationController
 
     # acts_as_token_authentication_handler_for User, only: [:delete, :update]
     

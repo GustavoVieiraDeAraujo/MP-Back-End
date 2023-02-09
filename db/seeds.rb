@@ -5,36 +5,36 @@ User.create(name:"Jan a Lenda", enrollment:100000001, is_admin:true, is_student:
 
 # Alunos
 
-# 1
-User.create(name:"De sá trepa no C.A", enrollment:100000002, is_admin:false, is_student:true, is_teacher:false, email:"desátrancouC.A@ffdesá.com", password:"foguetenãodáré")
 # 2
-User.create(name:"Caetano Rei Delas", enrollment:100000003, is_admin:false, is_student:true, is_teacher:false, email:"caetanosocafofo@infiel.com", password:"soudelaseparaelas")
+User.create(name:"De sá trepa no C.A", enrollment:100000002, is_admin:false, is_student:true, is_teacher:false, email:"desátrancouC.A@ffdesá.com", password:"foguetenãodáré")
 # 3
-User.create(name:"Luiz matador de aula", enrollment:100000004, is_admin:false, is_student:true, is_teacher:false, email:"teste1@teste1.com", password:"teste1")
+User.create(name:"Caetano Rei Delas", enrollment:100000003, is_admin:false, is_student:true, is_teacher:false, email:"caetanosocafofo@infiel.com", password:"soudelaseparaelas")
 # 4
-User.create(name:"Fernado sem soracaba", enrollment:100000005, is_admin:false, is_student:true, is_teacher:false, email:"teste2@teste2.com", password:"teste2")
+User.create(name:"Luiz matador de aula", enrollment:100000004, is_admin:false, is_student:true, is_teacher:false, email:"teste1@teste1.com", password:"teste1")
 # 5
-User.create(name:"Saudades de vc de Sá", enrollment:10000006, is_admin:false, is_student:true, is_teacher:false, email:"teste3@teste3.com", password:"teste3")
+User.create(name:"Fernado sem soracaba", enrollment:100000005, is_admin:false, is_student:true, is_teacher:false, email:"teste2@teste2.com", password:"teste2")
 # 6
-User.create(name:"Matue e teto é bão d+", enrollment:100000007, is_admin:false, is_student:true, is_teacher:false, email:"teste4@teste4.com", password:"teste4")
+User.create(name:"Saudades de vc de Sá", enrollment:10000006, is_admin:false, is_student:true, is_teacher:false, email:"teste3@teste3.com", password:"teste3")
 # 7
+User.create(name:"Matue e teto é bão d+", enrollment:100000007, is_admin:false, is_student:true, is_teacher:false, email:"teste4@teste4.com", password:"teste4")
+# 8
 User.create(name:"Foguete não da ré", enrollment:100000008, is_admin:false, is_student:true, is_teacher:false, email:"teste5@teste5.com", password:"teste5")
 
 # Professores
 
-# 8
-User.create(name:"deutrano 1", enrollment:100000009, is_admin:false, is_student:false, is_teacher:true, email:"deutrano1@deutrano1.com", password:"teste1")
 # 9
-User.create(name:"ciclano 1", enrollment:100000010, is_admin:false, is_student:false, is_teacher:true, email:"ciclano1@ciclano1.com", password:"teste2")
+User.create(name:"deutrano 1", enrollment:100000009, is_admin:false, is_student:false, is_teacher:true, email:"deutrano1@deutrano1.com", password:"teste1")
 # 10
-User.create(name:"fulano 1", enrollment:100000011, is_admin:false, is_student:false, is_teacher:true, email:"fulano1@fulano1.com", password:"teste3")
+User.create(name:"ciclano 1", enrollment:100000010, is_admin:false, is_student:false, is_teacher:true, email:"ciclano1@ciclano1.com", password:"teste2")
 # 11
-User.create(name:"deutrano 2", enrollment:100000012, is_admin:false, is_student:false, is_teacher:true, email:"deutrano2@deutrano2.com", password:"teste4")
+User.create(name:"fulano 1", enrollment:100000011, is_admin:false, is_student:false, is_teacher:true, email:"fulano1@fulano1.com", password:"teste3")
 # 12
-User.create(name:"ciclano 2", enrollment:10000013, is_admin:false, is_student:false, is_teacher:true, email:"ciclano2@ciclano2.com", password:"teste5")
+User.create(name:"deutrano 2", enrollment:100000012, is_admin:false, is_student:false, is_teacher:true, email:"deutrano2@deutrano2.com", password:"teste4")
 # 13
-User.create(name:"fulano 2", enrollment:100000014, is_admin:false, is_student:false, is_teacher:true, email:"fulano2@fulano2.com", password:"teste6")
+User.create(name:"ciclano 2", enrollment:10000013, is_admin:false, is_student:false, is_teacher:true, email:"ciclano2@ciclano2.com", password:"teste5")
 # 14
+User.create(name:"fulano 2", enrollment:100000014, is_admin:false, is_student:false, is_teacher:true, email:"fulano2@fulano2.com", password:"teste6")
+# 15
 User.create(name:"indeterminado", enrollment:100000015, is_admin:false, is_student:false, is_teacher:true, email:"indeterminado@indeterminado.com", password:"teste7")
 
 # Turmas
