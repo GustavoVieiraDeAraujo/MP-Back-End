@@ -5,6 +5,8 @@ class Api::V1::TeamController < ApplicationController
     def index
         team = Team.all
         render json: team, status: :ok
+    rescue StandardError => e
+        render json: e, status: :bad_request
     end
 
     def show 
@@ -15,7 +17,7 @@ class Api::V1::TeamController < ApplicationController
     end
 
     def create
-        team = Team.create!(user_params)
+        team = Team.create!(team_params)
         team.save!
         render json: team, status: :created
     rescue StandardError => e
@@ -24,7 +26,7 @@ class Api::V1::TeamController < ApplicationController
     
     def update
         team = Team.find(params[:id])
-        team.update!(user_params)
+        team.update!(team_params)
         render json: team, status: :ok
     rescue StandardError => e
         render json: e, status: :unprocessable_entity
@@ -33,7 +35,7 @@ class Api::V1::TeamController < ApplicationController
     def delete
         team = Team.find(params[:id])
         team.destroy!
-        render json: {message: "Turma deletada com sucesso"}, status: :ok
+        render json: {message: "Turma #{team.name} deletada com sucesso"}, status: :ok
     rescue StandardError => e
         render json: e , status: :bad_request
     end
@@ -41,6 +43,6 @@ class Api::V1::TeamController < ApplicationController
     private
 
     def team_params 
-        params.require(:team).permit(:name, :teacher_id)
+        params.require(:team).permit(:name, :user_id)
     end
 end
