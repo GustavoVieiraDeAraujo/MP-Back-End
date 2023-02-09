@@ -40,52 +40,88 @@ User.create(name:"indeterminado", enrollment:100000015, is_admin:false, is_stude
 # Turmas
 
 # 1
-Team.create(name:"A", user_id: 8)
+Team.create(name:"A", user_id: 9)
 # 2
-Team.create(name:"B", user_id: 9)
+Team.create(name:"B", user_id: 10)
 # 3
-Team.create(name:"C", user_id: 10)
+Team.create(name:"C", user_id: 11)
 # 4
-Team.create(name:"D", user_id: 11)
+Team.create(name:"D", user_id: 12)
 # 5
-Team.create(name:"E", user_id: 12)
+Team.create(name:"E", user_id: 13)
 # 6
-Team.create(name:"F", user_id: 13)
+Team.create(name:"F", user_id: 14)
 # 7
-Team.create(name:"G", user_id: 14)
+Team.create(name:"G", user_id: 15)
 
 # Questões
 
 # 1
-Question.create(title:"quest 1", description:"descrip 1", subject:"subj 1", answer:"ans 1", user_id:8)
+Question.create(title:"quest 1", description:"descrip 1", subject:"subj 1", answer:"ans 1", user_id:9)
 # 2
-Question.create(title:"quest 2", description:"descrip 2", subject:"subj 2", answer:"ans 2", user_id:9)
+Question.create(title:"quest 2", description:"descrip 2", subject:"subj 2", answer:"ans 2", user_id:10)
 # 3
-Question.create(title:"quest 3", description:"descrip 3", subject:"subj 3", answer:"ans 3", user_id:10)
+Question.create(title:"quest 3", description:"descrip 3", subject:"subj 3", answer:"ans 3", user_id:11)
 # 4
-Question.create(title:"quest 4", description:"descrip 4", subject:"subj 4", answer:"ans 4", user_id:11)
+Question.create(title:"quest 4", description:"descrip 4", subject:"subj 4", answer:"ans 4", user_id:12)
 # 5
-Question.create(title:"quest 5", description:"descrip 5", subject:"subj 5", answer:"ans 5", user_id:12)
+Question.create(title:"quest 5", description:"descrip 5", subject:"subj 5", answer:"ans 5", user_id:13)
 # 6
-Question.create(title:"quest 6", description:"descrip 6", subject:"subj 6", answer:"ans 6", user_id:13)
+Question.create(title:"quest 6", description:"descrip 6", subject:"subj 6", answer:"ans 6", user_id:14)
 # 7
-Question.create(title:"quest 7", description:"descrip 7", subject:"subj 7", answer:"ans 7", user_id:14)
+Question.create(title:"quest 7", description:"descrip 7", subject:"subj 7", answer:"ans 7", user_id:15)
 
 
 # Provas
 
 # 1
-Quiz.create(title:"title 1", subject:"subj 1", user_id:8, team_id:1)
+Quiz.create(title:"title 1", subject:"subj 1", user_id:9, team_id:1)
 # 2
-Quiz.create(title:"title 2", subject:"subj 2", user_id:9, team_id:2)
+Quiz.create(title:"title 2", subject:"subj 2", user_id:10, team_id:2)
 # 3
-Quiz.create(title:"title 3", subject:"subj 3", user_id:10, team_id:3)
+Quiz.create(title:"title 3", subject:"subj 3", user_id:11, team_id:3)
 # 4
-Quiz.create(title:"title 4", subject:"subj 4", user_id:11, team_id:4)
+Quiz.create(title:"title 4", subject:"subj 4", user_id:12, team_id:4)
 # 5
-Quiz.create(title:"title 5", subject:"subj 5", user_id:12, team_id:5)
+Quiz.create(title:"title 5", subject:"subj 5", user_id:13, team_id:5)
 # 6
-Quiz.create(title:"title 6", subject:"subj 6", user_id:13, team_id:6)
+Quiz.create(title:"title 6", subject:"subj 6", user_id:14, team_id:6)
 # 7
-Quiz.create(title:"title 7", subject:"subj 7", user_id:14, team_id:7)
+Quiz.create(title:"title 7", subject:"subj 7", user_id:15, team_id:7)
 
+# Acrescentar alunos nas turmas
+
+# Turma A
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:1)
+end
+
+# Turma B
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:2)
+end
+
+# Turma C
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:3)
+end
+
+# Turma D
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:4)
+end
+
+# Turma E
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:5)
+end
+
+# Turma F
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:6)
+end
+
+# Turma G
+(2..8).step(1) do |n|
+    StudentTeam.create(user_id:n, team_id:7)
+end
