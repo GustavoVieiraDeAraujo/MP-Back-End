@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+  has_many :student_team, dependent: :destroy
+  has_many :student_quiz, dependent: :destroy
+  has_many :student_question, dependent: :destroy
+ 
   
   before_create do
     statistic = Statistic.create!(questions_answered:0, right_answers:0, wrong_answers:0)
