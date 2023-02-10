@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :student_question do
-    user { nil }
-    question { nil }
+    user { create(:user) }
+    question { create(:question) }
   end
 end
