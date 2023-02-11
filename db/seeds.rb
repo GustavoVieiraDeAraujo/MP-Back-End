@@ -1,7 +1,7 @@
 # -- Admins -- #
-User.create(name: 'Mindsu', enrollment: 001_068_666, is_admin: true, is_student: true, is_teacher: true,
+User.create(name: 'Mindsu', enrollment: 101_068_666, is_admin: true, is_student: true, is_teacher: true,
             email: 'mindsu@gmail.com', password: '12345')
-User.create(name: 'Eduardo Nakano', enrollment: 002_068_999, is_admin: true, is_student: true, is_teacher: true,
+User.create(name: 'Eduardo Nakano', enrollment: 102_068_999, is_admin: true, is_student: true, is_teacher: true,
             email: 'nakano@gmail.com', password: '12345')
 
 # -- Teachers -- #
