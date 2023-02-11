@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :team do
-    name { "MyString" }
+    name { 'MyString' }
     user { nil }
   end
 end
