@@ -1,18 +1,16 @@
 # Administrador
-Statistic.create!(questions_answered: 5, right_answers: 3, wrong_answers: 2)
-Statistic.create!(questions_answered: 6, right_answers: 4, wrong_answers: 2)
 
 # 1
-User.create(name:"Jan a Lenda", enrollment:100000001, is_admin:true, is_student:false, is_teacher:false, email:"janalendademp@jan.com", password:"janomelhor", statistic_id: 1 )
+User.create(name:"Jan a Lenda", enrollment:100000001, is_admin:true, is_student:false, is_teacher:false, email:"janalendademp@jan.com", password:"janomelhor")
 
 # Alunos
 
 # 2
-User.create(name:"De sá trepa no C.A", enrollment:100000002, is_admin:false, is_student:true, is_teacher:false, email:"desátrancouc.a@ffdesá.com", password:"foguetenãodáré", statistic_id: 2)
+User.create(name:"De sá trepa no C.A", enrollment:100000002, is_admin:false, is_student:true, is_teacher:false, email:"desátrancouc.a@ffdesá.com", password:"foguetenãodáré")
 # 3
 User.create(name:"Caetano Rei Delas", enrollment:100000003, is_admin:false, is_student:true, is_teacher:false, email:"caetanosocafofo@infiel.com", password:"soudelaseparaelas")
 # 4
-User.create(name:"Luiz matador de aula", enrollment:100000004, is_admin:false, is_student:true, is_teacher:false, email:"teste1@teste1.com", password:"teste1", statistic_id: 1)
+User.create(name:"Luiz matador de aula", enrollment:100000004, is_admin:false, is_student:true, is_teacher:false, email:"teste1@teste1.com", password:"teste1")
 # 5
 User.create(name:"Fernado sem soracaba", enrollment:100000005, is_admin:false, is_student:true, is_teacher:false, email:"teste2@teste2.com", password:"teste2")
 # 6
