@@ -15,6 +15,12 @@ FactoryBot.define do
     is_admin { true }
     is_teacher { true }
     is_student { true }
-    statistic { create(:statistic) }
+    statistic_id { create(:statistic).id }
+  end
+
+  factory :statistic do
+    questions_answered {5}
+    wrong_answers {3}
+    right_answers {2}
   end
 end
