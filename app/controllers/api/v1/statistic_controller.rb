@@ -1,31 +1,35 @@
-class Api::V1::StatisticController < ApplicationController
+module Api
+  module V1
+    class StatisticController < ApplicationController
+      acts_as_token_authentication_handler_for User, only: %i[delete update]
 
-    acts_as_token_authentication_handler_for User, only: [:delete, :update]
-    
-    def index
+      def index
         statistics = Statistic.all
         render json: statistics, status: :ok
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :bad_request
-    end
+      end
 
-    def show 
+      def show
         statistic = Statistic.find(params[:id])
         render json: statistic, status: :ok
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :not_found
-    end
+      end
 
-    def update
+      def update
         statistic = Statistic.find(params[:id])
         statistic.update!(statistics_params)
         render json: statistic, status: :ok
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :unprocessable_entity
-    end
+      end
 
-    private
-    def statistics_params 
+      private
+
+      def statistics_params
         params.require(:statistic).permit(:questions_answered, :right_answers, :wrong_answers)
+      end
     end
+  end
 end

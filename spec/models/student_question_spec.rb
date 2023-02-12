@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe StudentQuestion, type: :model do
-  describe "Factory" do
+  describe 'Factory' do
     context 'When using standart factory' do
       it { expect(build(:student_question)).to be_valid }
-    end 
+    end
   end
   describe 'Validates' do
     context 'when StudentQuestion has no question_id' do

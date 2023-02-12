@@ -1,47 +1,51 @@
-class Api::V1::QuizController < ApplicationController
+module Api
+  module V1
+    class QuizController < ApplicationController
+      acts_as_token_authentication_handler_for User, only: %i[logout create delete update]
 
-    acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
-
-    def index
+      def index
         quiz = Quiz.all
         render json: quiz, status: :ok
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :bad_request
-    end
+      end
 
-    def show 
+      def show
         quiz = Quiz.find(params[:id])
         render json: quiz, status: :ok
-    rescue StandardError
+      rescue StandardError
         head(:not_found)
-    end
+      end
 
-    def create
+      def create
         quiz = Quiz.create!(quiz_params)
         quiz.save!
         render json: quiz, status: :created
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :bad_request
-    end
-    
-    def update
+      end
+
+      def update
         quiz = Quiz.find(params[:id])
         quiz.update!(quiz_params)
         render json: quiz, status: :ok
-    rescue StandardError => e
+      rescue StandardError => e
         render json: e, status: :unprocessable_entity
-    end
+      end
 
-    def delete
+      def delete
         quiz = Quiz.find(params[:id])
         quiz.destroy!
-        render json: {message: "Prova deletada com sucesso"}, status: :ok
-    rescue StandardError => e
-        render json: e , status: :bad_request
-    end
+        render json: { message: 'Prova deletada com sucesso' }, status: :ok
+      rescue StandardError => e
+        render json: e, status: :bad_request
+      end
 
-    private
-    def quiz_params 
+      private
+
+      def quiz_params
         params.require(:quiz).permit(:title, :subject, :user_id, :team_id)
+      end
     end
+  end
 end

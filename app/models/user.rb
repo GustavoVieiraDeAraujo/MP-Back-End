@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :question, dependent: :destroy
   has_many :quiz, dependent: :destroy
   has_many :team, dependent: :destroy
-  
+
   validates_numericality_of :enrollment, only_integer: true
   validates_uniqueness_of :enrollment
   validates :name, presence: true
@@ -17,7 +17,6 @@ class User < ApplicationRecord
     statistic.save!
     self.statistic_id = statistic.id
   end
-
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

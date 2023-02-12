@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Questions", type: :request do
-    describe '/GET #index' do
+RSpec.describe 'Api::V1::Questions', type: :request do
+  describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/question/index'
       expect(response).to have_http_status(:ok)
@@ -29,7 +29,7 @@ RSpec.describe "Api::V1::Questions", type: :request do
   describe '/GET #create' do
     let(:user) { create(:user) }
     let(:question_params) do
-      { title: 'teste', description:'teste', subject: 'teste', answer:'teste', user_id: user.id }
+      { title: 'teste', description: 'teste', subject: 'teste', answer: 'teste', user_id: user.id }
     end
 
     context 'with ok params' do
@@ -53,12 +53,12 @@ RSpec.describe "Api::V1::Questions", type: :request do
       end
     end
   end
-    describe 'PATCH #update' do
+  describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:question_params) do
-      { title: 'teste', description:'teste', subject: 'teste', answer:'teste', user_id: user.id }
+      { title: 'teste', description: 'teste', subject: 'teste', answer: 'teste', user_id: user.id }
     end
-    let(:question) { create(:question, answer: "teste2") }
+    let(:question) { create(:question, answer: 'teste2') }
 
     context 'with ok params' do
       it 'return http status ok' do

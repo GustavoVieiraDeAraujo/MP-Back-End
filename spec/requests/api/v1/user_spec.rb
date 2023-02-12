@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Users", type: :request do
-  describe "user login" do
+RSpec.describe 'Api::V1::Users', type: :request do
+  describe 'user login' do
     before do
       create(:user, email: 'teste@teste', password: '1234567')
     end
 
     context 'when user has no a valid email' do
       it 'return http status unauthorized' do
-        get '/api/v1/user/login', params:{
+        get '/api/v1/user/login', params: {
           email: 'teste@teste.com',
           password: '1234567'
         }
@@ -39,15 +39,15 @@ RSpec.describe "Api::V1::Users", type: :request do
     let(:user) { create(:user) }
 
     before do
-      get '/api/v1/user/login', params:{
-          email: 'teste@teste',
-          password: '1234567'
+      get '/api/v1/user/login', params: {
+        email: 'teste@teste',
+        password: '1234567'
       }
     end
 
     context 'when user is loged' do
       it 'return http status ok' do
-        get '/api/v1/user/logout', headers:{
+        get '/api/v1/user/logout', headers: {
           'X-User-Email': user.email,
           'X-User-Token': user.authentication_token
         }
@@ -82,10 +82,13 @@ RSpec.describe "Api::V1::Users", type: :request do
   end
 
   describe '/GET #create' do
-    let(:user) {create(:user)}
+    let(:user) { create(:user) }
     let(:statistic) { create(:statistic) }
     let(:user_params) do
-      { name: 'teste', enrollment:12345678, is_admin: true, is_student: false, is_teacher: false, email: "teste@teste", password: "123456782", statistic_id: statistic.id }
+      { name: 'teste', enrollment: 12_345_67, is_admin: true,
+        is_student: false, is_teacher: false,
+        email: 'teste@teste',
+        password: '123458', statistic_id: statistic.id }
     end
 
     context 'with ok params' do
@@ -109,12 +112,13 @@ RSpec.describe "Api::V1::Users", type: :request do
       end
     end
   end
-    describe 'PATCH #update' do
+  describe 'PATCH #update' do
     let(:statistic) { create(:statistic) }
     let(:user_params) do
-      { name: 'teste', enrollment:12345678, is_admin: true, is_student: false, is_teacher: false, email: "teste@teste", password: "123456782", statistic_id: statistic.id }
+      { name: 'teste', enrollment: 12_345_678, is_admin: true, is_student: false, is_teacher: false, email: 'teste@teste',
+        password: '123456782', statistic_id: statistic.id }
     end
-    let(:user) { create(:user, name: "teste2") }
+    let(:user) { create(:user, name: 'teste2') }
 
     context 'with ok params' do
       it 'return http status ok' do

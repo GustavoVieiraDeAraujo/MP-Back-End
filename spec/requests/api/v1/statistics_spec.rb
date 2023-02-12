@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Statistics", type: :request do
+RSpec.describe 'Api::V1::Statistics', type: :request do
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/statistic/index'

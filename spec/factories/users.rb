@@ -8,7 +8,7 @@ FactoryBot.define do
   end
 
   factory :user do
-    email {generate(:user_email)}
+    email { generate(:user_email) }
     password { '0123456' }
     name { 'Teste' }
     enrollment { generate(:user_enrollment) }
@@ -19,8 +19,8 @@ FactoryBot.define do
   end
 
   factory :statistic do
-    questions_answered {5}
-    wrong_answers {3}
-    right_answers {2}
+    questions_answered { 5 }
+    wrong_answers { 3 }
+    right_answers { 2 }
   end
 end

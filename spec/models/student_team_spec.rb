@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe StudentTeam, type: :model do
-  describe "Factory" do
+  describe 'Factory' do
     context 'When using standart factory' do
       it { expect(build(:student_team)).to be_valid }
-    end 
+    end
   end
   describe 'Validates' do
     context 'when StudentTeam has no team_id' do
