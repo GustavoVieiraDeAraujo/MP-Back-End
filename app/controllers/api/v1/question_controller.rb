@@ -1,5 +1,5 @@
 class Api::V1::QuestionController < ApplicationController
-     #acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+     acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
 
     def index
         question = Question.all
@@ -16,16 +16,11 @@ class Api::V1::QuestionController < ApplicationController
     end
 
     def create
-        if current_user.is_admin?
-            question = Question.create(question_params)
-            if question.save
-                render json: question, status: :created
-            else
-                render json: { errors: question.errors.full_messages }, status: :bad_request
-            end
-        else
-            render json: { errors: ['Você não pode cria uma questão'] }, status: :forbidden
-        end
+        question = Question.create!(question_params)
+        question.save!
+        render json: question, status: :created
+    rescue StandardError => e
+        render json: e, status: :bad_request
     end
     
     def update
