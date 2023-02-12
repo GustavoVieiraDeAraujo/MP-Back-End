@@ -7,12 +7,11 @@ class User < ApplicationRecord
   has_many :question, dependent: :destroy
   has_many :quiz, dependent: :destroy
   has_many :team, dependent: :destroy
-
+  
   validates_numericality_of :enrollment, only_integer: true
   validates_uniqueness_of :enrollment
   validates :name, presence: true
- 
-  
+
   before_create do
     statistic = Statistic.create!(questions_answered: 0, right_answers: 0, wrong_answers: 0)
     statistic.save!
