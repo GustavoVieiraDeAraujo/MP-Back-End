@@ -3,5 +3,6 @@ FactoryBot.define do
     title { 'MyString' }
     subject { 'MyString' }
     user { create(:user) }
+    team { create(:team) }
   end
 end

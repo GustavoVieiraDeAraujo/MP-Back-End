@@ -1,6 +1,6 @@
 class Api::V1::UserController < ApplicationController
 
-    # acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+     acts_as_token_authentication_handler_for User, only: %i[:logout, :create, :delete, :update]
     
     def login
         user = User.find_by!(email: params[:email])
@@ -10,7 +10,7 @@ class Api::V1::UserController < ApplicationController
             head(:unauthorized)
         end
     rescue StandardError => e
-        render json: {message: e.message}, status: :not_found
+        render json: {message: e.message}, status: :unauthorized
     end
 
     def logout
@@ -53,10 +53,10 @@ class Api::V1::UserController < ApplicationController
 
     def delete
         user = User.find(params[:id])
-        user.destroy!
-        render json: {message: "Usuario #{user.name} deletado com sucesso"}, status: :ok
-    rescue StandardError => e
-        render json: e , status: :bad_request
+            user.destroy!
+            render json: {message: "Usuario #{user.name} deletado com sucesso"}, status: :ok
+        rescue StandardError => e
+            render json: e , status: :bad_request
     end
 
     private
