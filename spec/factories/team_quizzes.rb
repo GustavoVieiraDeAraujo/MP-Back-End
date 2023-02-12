@@ -1,6 +1,6 @@
 FactoryBot.define do
-  factory :student_quiz do
+  factory :team_quiz do
+    team { create(:team) }
     quiz { create(:quiz) }
-    user { create(:user) }
   end
 end

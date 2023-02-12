@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
-  describe "Factory" do
+  describe 'Factory' do
     context 'When using standart factory' do
       it { expect(build(:question)).to be_valid }
-    end 
+    end
   end
   describe 'Validates' do
     context 'when Question has no title' do
