@@ -1,6 +1,6 @@
 class Api::V1::TeamController < ApplicationController
 
-    # acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+    acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
 
     def index
         team = Team.all

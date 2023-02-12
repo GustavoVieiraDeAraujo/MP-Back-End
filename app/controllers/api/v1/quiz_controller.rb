@@ -1,6 +1,6 @@
 class Api::V1::QuizController < ApplicationController
 
-    # acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+    acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
 
     def index
         quiz = Quiz.all
@@ -42,6 +42,6 @@ class Api::V1::QuizController < ApplicationController
 
     private
     def quiz_params 
-        params.require(:quiz).permit(:title, :subject, :user_id)
+        params.require(:quiz).permit(:title, :subject, :user_id, :team_id)
     end
 end

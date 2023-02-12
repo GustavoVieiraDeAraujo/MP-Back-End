@@ -1,6 +1,6 @@
 class Api::V1::StatisticController < ApplicationController
 
-    # acts_as_token_authentication_handler_for User, only: [:delete, :update]
+    acts_as_token_authentication_handler_for User, only: [:delete, :update]
     
     def index
         statistics = Statistic.all

@@ -9,7 +9,7 @@ class Api::V1::UserController < ApplicationController
       head(:unauthorized)
     end
   rescue StandardError => e
-    render json: { message: e.message }, status: :not_found
+    render json: { message: e.message }, status: :unauthorized
   end
 
   def logout
