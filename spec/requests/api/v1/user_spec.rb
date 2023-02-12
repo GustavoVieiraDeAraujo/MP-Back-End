@@ -49,7 +49,7 @@ RSpec.describe "Api::V1::Users", type: :request do
       it 'return http status ok' do
         get '/api/v1/user/logout', headers:{
           'X-User-Email': user.email,
-          'X-User-Password': user.authentication_token
+          'X-User-Token': user.authentication_token
         }
         expect(response).to have_http_status(:ok)
       end
@@ -82,6 +82,7 @@ RSpec.describe "Api::V1::Users", type: :request do
   end
 
   describe '/GET #create' do
+    let(:user) {create(:user)}
     let(:statistic) { create(:statistic) }
     let(:user_params) do
       { name: 'teste', enrollment:12345678, is_admin: true, is_student: false, is_teacher: false, email: "teste@teste", password: "123456782", statistic_id: statistic.id }

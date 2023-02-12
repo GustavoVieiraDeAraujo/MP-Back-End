@@ -1,5 +1,5 @@
 class Api::V1::UserController < ApplicationController
-  # acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+  acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
 
   def login
     user = User.find_by!(email: params[:email])
@@ -9,7 +9,7 @@ class Api::V1::UserController < ApplicationController
       head(:unauthorized)
     end
   rescue StandardError => e
-    render json: { message: e.message }, status: :not_found
+    render json: { message: e.message }, status: :unauthorized
   end
 
   def logout
@@ -61,6 +61,6 @@ class Api::V1::UserController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :enrollment, :is_admin, :is_student, :is_teacher, :email, :password)
+    params.require(:user).permit(:name, :enrollment, :is_admin, :is_student, :is_teacher, :email, :password, :authentication_token)
   end
 end

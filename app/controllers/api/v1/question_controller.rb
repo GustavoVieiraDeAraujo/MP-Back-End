@@ -1,5 +1,5 @@
 class Api::V1::QuestionController < ApplicationController
-     # acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
+     acts_as_token_authentication_handler_for User, only: [:logout, :create, :delete, :update]
 
     def index
         question = Question.all

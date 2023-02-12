@@ -4,7 +4,9 @@ class User < ApplicationRecord
   has_many :student_team, dependent: :destroy
   has_many :student_quiz, dependent: :destroy
   has_many :student_question, dependent: :destroy
-  has_many :question
+  has_many :question, dependent: :destroy
+  has_many :quiz, dependent: :destroy
+  has_many :team, dependent: :destroy
   
   validates_numericality_of :enrollment, only_integer: true
   validates_uniqueness_of :enrollment
