@@ -2,33 +2,33 @@
 User.create(name: 'Mindsu', enrollment: 101_068_666, is_admin: true, is_student: true, is_teacher: true,
             email: 'mindsu@gmail.com', password: '1234567')
 User.create(name: 'Eduardo Nakano', enrollment: 102_068_999, is_admin: true, is_student: true, is_teacher: true,
-            email: 'nakano@gmail.com', password: '12345')
+            email: 'nakano@gmail.com', password: '1234567')
 
 # -- Teachers -- #
 User.create(name: 'Guy Grebot', enrollment: 211_068_666, is_admin: false, is_student: false, is_teacher: true,
-            email: 'grebot@gmail.com', password: '12345')
+            email: 'grebot@gmail.com', password: '1234567')
 User.create(name: 'Jan', enrollment: 211_068_666, is_admin: false, is_student: false, is_teacher: true,
-            email: 'jan@gmail.com', password: '12345')
+            email: 'jan@gmail.com', password: '1234567')
 
 # -- Students -- #
 User.create(name: 'Dissa', enrollment: 211_068_003, is_admin: false, is_student: true, is_teacher: false,
-            email: 'dissa@gmail.com', password: '12345')
+            email: 'dissa@gmail.com', password: '1234567')
 User.create(name: 'Caetano', enrollment: 211_068_004, is_admin: false, is_student: true, is_teacher: false,
-            email: 'caetano@gmail.com', password: '12345')
+            email: 'caetano@gmail.com', password: '1234567')
 User.create(name: 'Araujo', enrollment: 211_068_002, is_admin: false, is_student: true, is_teacher: false,
-            email: 'araujo@gmail.com', password: '12345')
+            email: 'araujo@gmail.com', password: '1234567')
 User.create(name: 'Luiz', enrollment: 211_068_005, is_admin: false, is_student: true, is_teacher: false,
-            email: 'luiz@gmail.com', password: '12345')
+            email: 'luiz@gmail.com', password: '1234567')
 User.create(name: 'Alexandre', enrollment: 211_068_006, is_admin: false, is_student: true, is_teacher: false,
-            email: 'kiehn.aditya@gmail.com', password: '12345')
+            email: 'kiehn.aditya@gmail.com', password: '1234567')
 User.create(name: 'Romain', enrollment: 211_068_007, is_admin: false, is_student: true, is_teacher: false,
-            email: 'hmueller@gmail.com', password: '12345')
+            email: 'hmueller@gmail.com', password: '1234567')
 User.create(name: 'Marques', enrollment: 211_068_008, is_admin: false, is_student: true, is_teacher: false,
-            email: 'nyah.mitchell@gmail.com', password: '12345')
+            email: 'nyah.mitchell@gmail.com', password: '1234567')
 User.create(name: 'Eduardo', enrollment: 211_068_009, is_admin: false, is_student: true, is_teacher: false,
-            email: 'noemie.lockman@gmail.com', password: '12345')
+            email: 'noemie.lockman@gmail.com', password: '1234567')
 User.create(name: 'André', enrollment: 211_068_010, is_admin: false, is_student: true, is_teacher: false,
-            email: 'ignatius77@gmail.com', password: '12345')
+            email: 'ignatius77@gmail.com', password: '1234567')
 
 # -- Team -- #
 Team.create(name: 'Turma A', user_id: 3)
