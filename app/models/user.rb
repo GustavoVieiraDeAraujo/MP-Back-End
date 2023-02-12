@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :question
   belongs_to :statistic
   validates_numericality_of :enrollment, only_integer: true
+  validates_uniqueness_of :enrollment
+  validates :name, presence: true
  
   
   before_create do

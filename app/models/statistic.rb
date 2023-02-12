@@ -1,5 +1,5 @@
 class Statistic < ApplicationRecord
-    validates :questions_answered, :right_answers, :wrong_answers, length:{minimum: 0, allow_nil: false}
+    validates :questions_answered, :right_answers, :wrong_answers, length:{ minimum: 0, allow_nil: false }
     validate :right_value
     
     def right_value
