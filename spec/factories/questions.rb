@@ -4,6 +4,6 @@ FactoryBot.define do
     description { 'MyText' }
     subject { 'MyString' }
     answer { 'MyString' }
-    user { nil }
+    user { create(:user) }
   end
 end

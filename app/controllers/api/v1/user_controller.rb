@@ -20,10 +20,12 @@ class Api::V1::UserController < ApplicationController
     render json: { message: e.message }, status: :bad_request
   end
 
-  def index
-    user = User.all
-    render json: user, status: :ok
-  end
+    def index
+        user = User.all
+        render json: user, status: :ok
+    rescue StandardError => e
+        render json: e, status: :bad_request
+    end
 
   def show
     user = User.find(params[:id])
