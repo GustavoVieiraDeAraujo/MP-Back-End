@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TeamQuiz, type: :model do
+RSpec.describe StudentTeam, type: :model do
   describe 'Factory' do
     context 'When using standart factory' do
       it { expect(build(:student_team)).to be_valid }

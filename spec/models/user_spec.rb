@@ -28,6 +28,7 @@ RSpec.describe User, type: :model do
         expect(build(:user, email: 'email@unique')).to be_invalid
       end
     end
+
     context 'when user enrollment has no unique' do
       it do
         create(:user, enrollment: 123_456_789)

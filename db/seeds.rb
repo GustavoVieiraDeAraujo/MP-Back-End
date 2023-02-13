@@ -38,6 +38,9 @@ Team.create(name: 'Turma B', user_id: 4)
 Quiz.create(title: 'Prova de Soma', subject: 'Matemática', user_id: 3, team_id: 1)
 Quiz.create(title: 'Prova de Multiplicação', subject: 'Matemática', user_id: 3, team_id: 1)
 Quiz.create(title: 'Prova de Conhecimentos Gerais', subject: 'História', user_id: 4, team_id: 2)
+Quiz.create(title: 'Prova de Soma', subject: 'Matemática', user_id: 3, team_id: 1)
+Quiz.create(title: 'Prova de Multiplicação', subject: 'Matemática', user_id: 3, team_id: 1)
+Quiz.create(title: 'Prova de Conhecimentos Gerais', subject: 'História', user_id: 4, team_id: 2)
 
 # -- Questions -- #
 Question.create(title: 'Questão A', description: 'Quanto é 1 + 1?', subject: 'Matemática', answer: '2', user_id: 3)
@@ -52,17 +55,20 @@ Question.create(title: 'Questão G', description: 'Qual a cor do cavalo branco d
     C - BRANCO
     4 - PRETO',
                 subject: 'História', answer: 'C', user_id: 4)
+                subject: 'História', answer: 'C', user_id: 4)
 Question.create(title: 'Questão H', description: 'Em que ano o brasil se tornou um país independente?
     A - 2023
     B - 1832
     C - 1822
     4 - NUNCA',
                 subject: 'História', answer: 'C', user_id: 4)
+                subject: 'História', answer: 'C', user_id: 4)
 Question.create(title: 'Questão I', description: 'Qual o sentido da vida, o universo e tudo mais?
     A - 42
     B - 24
     C - 4^2
     4 - FRED',
+                subject: 'História', answer: 'A', user_id: 4)
                 subject: 'História', answer: 'A', user_id: 4)
 
 # -- Quiz Questions -- #
@@ -100,3 +106,4 @@ end
 (1..3).step(1) do |n|
   TeamQuiz.create(team_id: 2, quiz_id: n)
 end
+
