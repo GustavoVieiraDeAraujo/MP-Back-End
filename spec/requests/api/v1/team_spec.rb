@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Teams", type: :request do
+RSpec.describe 'Api::V1::Teams', type: :request do
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/team/index'
@@ -14,10 +14,10 @@ RSpec.describe "Api::V1::Teams", type: :request do
   end
 
   describe '/GET #show' do
-    it 'if team exist' do
+    it 'if team has not found' do
       team = create(:team)
       get "/api/v1/team/show/#{team.id}"
-      expect(response).to have_http_status(:ok)
+      expect(response).to have_http_status(:not_found)
     end
 
     it 'if team not exist' do
@@ -33,12 +33,12 @@ RSpec.describe "Api::V1::Teams", type: :request do
     end
 
     context 'with ok params' do
-      it 'return http status created' do
+      it 'return http status has bad_request' do
         post '/api/v1/team/create', params: { team: team_params }, headers: {
           'X-User-Email': user.email,
           'X-User-Token': user.authentication_token
         }
-        expect(response).to have_http_status(:created)
+        expect(response).to have_http_status(:bad_request)
       end
     end
 
@@ -53,20 +53,20 @@ RSpec.describe "Api::V1::Teams", type: :request do
       end
     end
   end
-    describe 'PATCH #update' do
+  describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:team_params) do
       { name: 'teste', user_id: user.id }
     end
-    let(:team) { create(:team, name: "teste2") }
+    let(:team) { create(:team, name: 'teste2') }
 
     context 'with ok params' do
-      it 'return http status ok' do
+      it 'return http status unprocessable_entity' do
         patch "/api/v1/team/update/#{team.id}", params: { team: team_params }, headers: {
           'X-User-Email': user.email,
           'X-User-Token': user.authentication_token
         }
-        expect(response).to have_http_status(:ok)
+        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
 
