@@ -103,4 +103,3 @@ end
 (1..3).step(1) do |n|
   TeamQuiz.create(team_id: 2, quiz_id: n)
 end
-

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Api::V1::Teams", type: :request do
+RSpec.describe 'Api::V1::Teams', type: :request do
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/team/index'
@@ -53,12 +53,12 @@ RSpec.describe "Api::V1::Teams", type: :request do
       end
     end
   end
-    describe 'PATCH #update' do
+  describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:team_params) do
       { name: 'teste', user_id: user.id }
     end
-    let(:team) { create(:team, name: "teste2") }
+    let(:team) { create(:team, name: 'teste2') }
 
     context 'with ok params' do
       it 'return http status ok' do
