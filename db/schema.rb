@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_12_120704) do
+ActiveRecord::Schema.define(version: 2023_02_12_225533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2023_02_12_120704) do
     t.text "description"
     t.string "subject"
     t.string "answer"
-    t.bigint "user_id", null: false #professor_id
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_questions_on_user_id"
@@ -54,24 +54,6 @@ ActiveRecord::Schema.define(version: 2023_02_12_120704) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "student_questions", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "question_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["question_id"], name: "index_student_questions_on_question_id"
-    t.index ["user_id"], name: "index_student_questions_on_user_id"
-  end
-
-  create_table "student_quizzes", force: :cascade do |t|
-    t.bigint "quiz_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["quiz_id"], name: "index_student_quizzes_on_quiz_id"
-    t.index ["user_id"], name: "index_student_quizzes_on_user_id"
-  end
-
   create_table "student_teams", force: :cascade do |t|
     t.bigint "team_id", null: false
     t.bigint "user_id", null: false
@@ -79,6 +61,15 @@ ActiveRecord::Schema.define(version: 2023_02_12_120704) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["team_id"], name: "index_student_teams_on_team_id"
     t.index ["user_id"], name: "index_student_teams_on_user_id"
+  end
+
+  create_table "team_quizzes", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.bigint "quiz_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quiz_id"], name: "index_team_quizzes_on_quiz_id"
+    t.index ["team_id"], name: "index_team_quizzes_on_team_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -115,11 +106,9 @@ ActiveRecord::Schema.define(version: 2023_02_12_120704) do
   add_foreign_key "quiz_questions", "quizzes"
   add_foreign_key "quizzes", "teams"
   add_foreign_key "quizzes", "users"
-  add_foreign_key "student_questions", "questions"
-  add_foreign_key "student_questions", "users"
-  add_foreign_key "student_quizzes", "quizzes"
-  add_foreign_key "student_quizzes", "users"
   add_foreign_key "student_teams", "teams"
   add_foreign_key "student_teams", "users"
+  add_foreign_key "team_quizzes", "quizzes"
+  add_foreign_key "team_quizzes", "teams"
   add_foreign_key "teams", "users"
 end

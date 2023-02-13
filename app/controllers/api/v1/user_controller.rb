@@ -22,12 +22,13 @@ module Api
         render json: { message: e.message }, status: :bad_request
       end
 
-      def index
-        user = User.all
-        render json: user, status: :ok
-      rescue StandardError => e
-        render json: e, status: :bad_request
-      end
+  def index
+    user = User.all
+    render json: user, status: :ok
+  rescue StandardError => e
+    render json: e, status: :bad_request
+  end
+
 
       def show
         user = User.find(params[:id])
@@ -62,9 +63,10 @@ module Api
 
       private
 
+
       def user_params
         params.require(:user).permit(:name, :enrollment, :is_admin, :is_student, :is_teacher, :email, :password,
-                                     :authentication_token)
+          :authentication_token)
       end
     end
   end
