@@ -1,7 +1,7 @@
 module Api
   module V1
     class TeamController < ApplicationController
-      acts_as_token_authentication_handler_for User, only: %i[logout create delete update]
+      acts_as_token_authentication_handler_for User, only: %i[create delete update]
 
       def index
         team = Team.all
