@@ -55,20 +55,17 @@ Question.create(title: 'Questão G', description: 'Qual a cor do cavalo branco d
     C - BRANCO
     4 - PRETO',
                 subject: 'História', answer: 'C', user_id: 4)
-                subject: 'História', answer: 'C', user_id: 4)
 Question.create(title: 'Questão H', description: 'Em que ano o brasil se tornou um país independente?
     A - 2023
     B - 1832
     C - 1822
     4 - NUNCA',
                 subject: 'História', answer: 'C', user_id: 4)
-                subject: 'História', answer: 'C', user_id: 4)
 Question.create(title: 'Questão I', description: 'Qual o sentido da vida, o universo e tudo mais?
     A - 42
     B - 24
     C - 4^2
     4 - FRED',
-                subject: 'História', answer: 'A', user_id: 4)
                 subject: 'História', answer: 'A', user_id: 4)
 
 # -- Quiz Questions -- #

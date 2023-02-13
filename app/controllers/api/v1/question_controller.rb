@@ -1,5 +1,3 @@
-class Api::V1::QuestionController < ApplicationController
-  acts_as_token_authentication_handler_for User, only: %i[logout create delete update]
 module Api
   module V1
     class QuestionController < ApplicationController
