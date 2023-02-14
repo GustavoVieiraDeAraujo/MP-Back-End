@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esse é o README com instruções para que o nosso back-end do projeto de Métodos de programação possa ser rodado.
 
-Things you may want to cover:
+Banco de dados em diagrama: https://dbdiagram.io/d/63e03733296d97641d7e9741
 
-* Ruby version
+Comandos para iniciar:
+- bundle
+- rails db:create
+- rails db:reset
 
-* System dependencies
+Comando para rodar testes:
+- rspec
 
-* Configuration
+Comando para rodar o Rubocop:
+- rubocop
 
-* Database creation
+Versão do ruby: 2.7.4
 
-* Database initialization
+Versão do ruby on rails: 6.1.7.2
 
-* How to run the test suite
+Banco de dados: postgresql
 
-* Services (job queues, cache servers, search engines, etc.)
+Porta do servidor: 3000
 
-* Deployment instructions
-
-* ...
+Comando para rodar o back-end:
+- rails s
