@@ -16,7 +16,9 @@ Comando para rodar o Rubocop:
 - rubocop
 
 Versão do ruby: 2.7.4
+
 Versão do ruby on rails: 6.1.7.2
+
 Banco de dados: postgresql
 
 Porta do servidor: 3000
