@@ -1,7 +1,6 @@
 module Api
   module V1
     class QuestionController < ApplicationController
-      acts_as_token_authentication_handler_for User, only: %i[delete update]
 
       def index
         question = Question.all
