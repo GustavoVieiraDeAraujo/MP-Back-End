@@ -36,7 +36,7 @@ module Api
       def delete
         question = Question.find(params[:id])
         question.destroy!
-        render json: { message: 'Prova deletada com sucesso' }, status: :ok
+        render json: { message: 'questão deletada com sucesso' }, status: :ok
       rescue StandardError => e
         render json: e, status: :bad_request
       end
