@@ -26,4 +26,4 @@ Metrics/AbcSize:
   Max: 32
 
 Layout/LineLength:
-  Max: 150
+  Max: 200
