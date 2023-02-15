@@ -43,6 +43,8 @@ Rails.application.routes.draw do
         post "create", to: "team#create"
         patch "update/:id", to: "team#update"
         delete "delete/:id", to: "team#delete"
+        post "add_user_to_team", to: "team#add_user_to_team"
+        delete "remove_user_from_team", to: "team#remove_user_from_team"
       end
 
     end
