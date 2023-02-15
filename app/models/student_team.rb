@@ -6,4 +6,3 @@ class StudentTeam < ApplicationRecord
   # Associa um StudentTeam a um usuário
   belongs_to :user
 end
-

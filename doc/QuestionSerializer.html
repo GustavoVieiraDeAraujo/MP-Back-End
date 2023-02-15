@@ -86,6 +86,8 @@
 
   <section class="description">
     
+<p>Serializer para formatar objetos <a href="Question.html"><code>Question</code></a> como JSON</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -109,10 +111,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Método para formatar o objeto ‘owner’ @return [Hash] objeto formatado com id e nome do proprietário da questão</p>
 
           <div class="method-source-code" id="owner-source">
-            <pre><span class="ruby-comment"># File app/serializers/question_serializer.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/serializers/question_serializer.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">owner</span>
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by!</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">user_id</span>)
   {

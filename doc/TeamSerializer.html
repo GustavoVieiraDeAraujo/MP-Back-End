@@ -88,6 +88,25 @@
 
   <section class="description">
     
+<h2 id="class-TeamSerializer-label-Schema+Information">Schema Information<span><a href="#class-TeamSerializer-label-Schema+Information">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Table name: teams</p>
+
+<pre>id         :bigint           not null, primary key
+name       :string           not null
+user_id    :bigint
+created_at :datetime         not null
+updated_at :datetime         not null</pre>
+
+<p>Indexes</p>
+
+<pre class="ruby"><span class="ruby-identifier">index_teams_on_user_id</span>  (<span class="ruby-identifier">user_id</span>)
+</pre>
+
+<p>Foreign Keys</p>
+
+<pre>fk_rails_...  (user_id =&gt; users.id)</pre>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -111,10 +130,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Retorna um array com informações de todos os alunos do time</p>
 
           <div class="method-source-code" id="students-source">
-            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">students</span>
   <span class="ruby-identifier">array</span> = []
   <span class="ruby-identifier">object</span>.<span class="ruby-identifier">student_team</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">student</span><span class="ruby-operator">|</span>
@@ -142,10 +161,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Retorna o professor responsável pelo time</p>
 
           <div class="method-source-code" id="teacher-source">
-            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 24</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">teacher</span>
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by!</span>(<span class="ruby-value">id:</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">id</span>)
   {
@@ -169,10 +188,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Retorna um array com informações de todos os testes realizados pelo time</p>
 
           <div class="method-source-code" id="tests-source">
-            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 24</span>
+            <pre><span class="ruby-comment"># File app/serializers/team_serializer.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">tests</span>
   <span class="ruby-identifier">array</span> = []
   <span class="ruby-identifier">object</span>.<span class="ruby-identifier">team_quiz</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">quiz</span><span class="ruby-operator">|</span>

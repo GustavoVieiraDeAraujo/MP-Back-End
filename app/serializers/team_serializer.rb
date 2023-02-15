@@ -1,6 +1,26 @@
+# == Schema Information
+#
+# Table name: teams
+#
+#  id         :bigint           not null, primary key
+#  name       :string           not null
+#  user_id    :bigint
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_teams_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
+#
+
 class TeamSerializer < ActiveModel::Serializer
   attributes :id, :name, :teacher, :students, :tests
 
+  # Retorna o professor responsável pelo time
   def teacher
     user = User.find_by!(id: object.id)
     {
@@ -9,6 +29,7 @@ class TeamSerializer < ActiveModel::Serializer
     }
   end
 
+  # Retorna um array com informações de todos os alunos do time
   def students
     array = []
     object.student_team.each do |student|
@@ -21,6 +42,7 @@ class TeamSerializer < ActiveModel::Serializer
     array
   end
 
+  # Retorna um array com informações de todos os testes realizados pelo time
   def tests
     array = []
     object.team_quiz.each do |quiz|

@@ -15,4 +15,3 @@ class Quiz < ApplicationRecord
   # Associa um quiz a uma equipe
   belongs_to :team
 end
-

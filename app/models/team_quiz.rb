@@ -6,4 +6,3 @@ class TeamQuiz < ApplicationRecord
   # Associa um TeamQuiz a um quiz
   belongs_to :quiz
 end
-

@@ -17,4 +17,3 @@ class Statistic < ApplicationRecord
     errors.add(:base, 'A soma dos resultados não bate com a quantidade de questões respondidas')
   end
 end
-

@@ -6,4 +6,3 @@ class QuizQuestion < ApplicationRecord
   # Associa um questionário a uma pergunta
   belongs_to :question
 end
-

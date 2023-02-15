@@ -12,4 +12,3 @@ class Team < ApplicationRecord
   # Associa uma equipe com um usuário
   belongs_to :user
 end
-
