@@ -86,6 +86,8 @@
 
   <section class="description">
     
+<p>Representa as estatísticas de respostas de um usuário no sistema</p>
+
   </section>
 
   <section id="5Buntitled-5D" class="documentation-section">
@@ -109,10 +111,10 @@
         </div>
 
         <div class="method-description">
-          
+          <p>Verifica se a soma das respostas corretas e incorretas bate com a quantidade de perguntas respondidas</p>
 
           <div class="method-source-code" id="right_value-source">
-            <pre><span class="ruby-comment"># File app/models/statistic.rb, line 5</span>
+            <pre><span class="ruby-comment"># File app/models/statistic.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">right_value</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">right_answers</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">wrong_answers</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">questions_answered</span>.<span class="ruby-identifier">nil?</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">right_answers</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">wrong_answers</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">questions_answered</span>
