@@ -4,6 +4,8 @@ Esse é o README com instruções para que o nosso back-end do projeto de Métod
 
 Banco de dados em diagrama: https://dbdiagram.io/d/63e03733296d97641d7e9741
 
+Documentação detalhada do Back-end no arquivo /doc
+
 Comandos para iniciar:
 - bundle
 - rails db:create
