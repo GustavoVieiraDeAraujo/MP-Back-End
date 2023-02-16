@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Teams', type: :request do
+   # Teste da rota GET /api/v1/team/index
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/team/index'
@@ -12,7 +13,7 @@ RSpec.describe 'Api::V1::Teams', type: :request do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
-
+  # Teste da rota GET /api/v1/team/show/:id
   describe '/GET #show' do
     it 'if team has not found' do
       team = create(:team)
@@ -25,7 +26,7 @@ RSpec.describe 'Api::V1::Teams', type: :request do
       expect(response).to have_http_status(:not_found)
     end
   end
-
+  # Teste da rota POST /api/v1/team/create
   describe '/GET #create' do
     let(:user) { create(:user) }
     let(:team_params) do
@@ -53,6 +54,7 @@ RSpec.describe 'Api::V1::Teams', type: :request do
       end
     end
   end
+  # Teste da rota PATCH /api/v1/team/update/:id
   describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:team_params) do
@@ -81,7 +83,7 @@ RSpec.describe 'Api::V1::Teams', type: :request do
       end
     end
   end
-
+  # Teste da rota DELETE /api/v1/team/delete/:id
   describe '/DELETE #delete' do
     let(:user) { create(:user) }
     let(:team) { create(:team) }

@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Users', type: :request do
+  # Teste da rota GET /api/v1/user/login
   describe 'user login' do
     before do
       create(:user, email: 'teste@teste', password: '1234567')
@@ -23,6 +24,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
         expect(response).to have_http_status(:unauthorized)
       end
     end
+    # Teste da rota GET /api/v1/user/logout
     context 'when login is a success' do
       it 'return http status ok' do
         get '/api/v1/user/login', params: {
@@ -51,7 +53,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       end
     end
   end
-
+  # Teste da rota GET /api/v1/user/index
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/user/index'
@@ -62,7 +64,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
-
+  # Teste da rota GET /api/v1/user/show/:id
   describe '/GET #show' do
     it 'if user exist' do
       user = create(:user)
@@ -74,7 +76,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       expect(response).to have_http_status(:not_found)
     end
   end
-
+  # Teste da rota PATCH /api/v1/user/create
   describe '/GET #create' do
     let(:user) { create(:user) }
     let(:statistic) { create(:statistic) }
@@ -103,6 +105,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       end
     end
   end
+    # Teste da rota PATCH /api/v1/user/update/:id
   describe 'PATCH #update' do
     let(:statistic) { create(:statistic) }
     let(:user_params) do
@@ -131,6 +134,7 @@ RSpec.describe 'Api::V1::Users', type: :request do
       end
     end
   end
+  # Teste da rota DELETE /api/v1/user/delete/:id
   describe '/DELETE #delete' do
     let(:user) { create(:user) }
     context 'when user exist' do

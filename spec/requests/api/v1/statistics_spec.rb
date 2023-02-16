@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Statistics', type: :request do
+    # Teste da rota GET /api/v1/statistic/index
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/statistic/index'
@@ -11,6 +12,7 @@ RSpec.describe 'Api::V1::Statistics', type: :request do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
+   # Teste da rota GET /api/v1/statistic/show/:id
   describe '/GET #show' do
     it 'if statistic exist' do
       statistic = create(:statistic)
@@ -22,6 +24,7 @@ RSpec.describe 'Api::V1::Statistics', type: :request do
       expect(response).to have_http_status(:not_found)
     end
   end
+   # Teste da rota PATCH /api/v1/statistic/update/:id
   describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:statistic_params) do

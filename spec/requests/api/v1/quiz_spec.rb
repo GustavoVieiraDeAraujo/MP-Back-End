@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Quizzes', type: :request do
+  # Teste da rota GET /api/v1/quiz/index
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/quiz/index'
@@ -11,6 +12,7 @@ RSpec.describe 'Api::V1::Quizzes', type: :request do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
+    # Teste da rota GET /api/v1/quiz/show/:id
   describe '/GET #show' do
     it 'if quiz exist' do
       quiz = create(:quiz)
@@ -22,6 +24,7 @@ RSpec.describe 'Api::V1::Quizzes', type: :request do
       expect(response).to have_http_status(:not_found)
     end
   end
+    # Teste da rota POST /api/v1/quiz/create
   describe '/GET #create' do
     let(:user) { create(:user) }
     let(:team) { create(:team) }
@@ -48,6 +51,7 @@ RSpec.describe 'Api::V1::Quizzes', type: :request do
       end
     end
   end
+    # Teste da rota PATCH /api/v1/quiz/update/:id
   describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:team) { create(:team) }
@@ -75,6 +79,7 @@ RSpec.describe 'Api::V1::Quizzes', type: :request do
       end
     end
   end
+    # Teste da rota DELETE /api/v1/quiz/delete/:id
   describe '/DELETE #delete' do
     let(:user) { create(:user) }
     let(:quiz) { create(:quiz) }

@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Questions', type: :request do
+  
+  # Teste da rota GET /api/v1/question/index
   describe '/GET #index' do
     it 'return http status OK' do
       get '/api/v1/question/index'
@@ -11,6 +13,8 @@ RSpec.describe 'Api::V1::Questions', type: :request do
       expect(response.content_type).to eq('application/json; charset=utf-8')
     end
   end
+  
+  # Teste da rota GET /api/v1/question/show/:id
   describe '/GET #show' do
     it 'if question exist' do
       question = create(:question)
@@ -23,57 +27,68 @@ RSpec.describe 'Api::V1::Questions', type: :request do
       expect(response).to have_http_status(:not_found)
     end
   end
+  
+  # Teste da rota POST /api/v1/question/create
   describe '/GET #create' do
     let(:user) { create(:user) }
     let(:question_params) do
       { title: 'teste', description: 'teste', subject: 'teste', answer: 'teste', user_id: user.id }
     end
+    
     context 'with ok params' do
       it 'return http status created' do
         post '/api/v1/question/create', params: { question: question_params }, headers: {
-          'X-User-Email': user.email,
+          'X-User-Email': user.email, # Autenticação de usuário
           'X-User-Token': user.authentication_token
         }
         expect(response).to have_http_status(:created)
       end
     end
+    
     context 'with bad params' do
       it 'returns http status bad request' do
         question_params = nil
         post '/api/v1/user/create', params: { contact: question_params }, headers: {
-          'X-User-Email': user.email,
+          'X-User-Email': user.email, # Autenticação de usuário
           'X-User-Token': user.authentication_token
         }
         expect(response).to have_http_status(:bad_request)
       end
     end
   end
+  
+  # Teste da rota PATCH /api/v1/question/update/:id
   describe 'PATCH #update' do
     let(:user) { create(:user) }
     let(:question_params) do
       { title: 'teste', description: 'teste', subject: 'teste', answer: 'teste', user_id: user.id }
     end
     let(:question) { create(:question, answer: 'teste2') }
+    
     context 'with ok params' do
       it 'return http status ok' do
         patch "/api/v1/question/update/#{question.id}", params: { question: question_params }, headers: {
-          'X-User-Email': user.email,
+          'X-User-Email': user.email, # Autenticação de usuário
           'X-User-Token': user.authentication_token
         }
         expect(response).to have_http_status(:ok)
       end
     end
+    
     context 'with bad params' do
       it 'returns http status bad request' do
         question_params = nil
         patch '/api/v1/question/update/54', params: { question: question_params }, headers: {
-          'X-User-Email': user.email,
+          'X-User-Email': user.email, # Autenticação de usuário
           'X-User-Token': user.authentication_token
         }
+       
+
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
+  # Teste da rota DELETE /api/v1/question/delete/:id
   describe '/DELETE #delete' do
     let(:user) { create(:user) }
     let(:question) { create(:question) }

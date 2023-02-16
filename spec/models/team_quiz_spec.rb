@@ -1,17 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe TeamQuiz, type: :model do
+  # Testa a factory
   describe 'Factory' do
-    context 'When using standart factory' do
+    # Testa a criação de um TeamQuiz com a factory padrão
+    context 'Quando utilizando a factory padrão' do
       it { expect(build(:team_quiz)).to be_valid }
     end
   end
-  describe 'Validates' do
-    context 'when TeamQuiz has no team_id' do
+
+  # Testa as validações do modelo
+  describe 'Validações' do
+    # Testa se um TeamQuiz sem team_id é inválido
+    context 'Quando TeamQuiz não possui team_id' do
       it { expect(build(:team_quiz, team: nil)).to be_invalid }
     end
-    context 'when TeamQuiz has no quiz_id' do
+    # Testa se um TeamQuiz sem quiz_id é inválido
+    context 'Quando TeamQuiz não possui quiz_id' do
       it { expect(build(:team_quiz, quiz: nil)).to be_invalid }
     end
   end
 end
+
